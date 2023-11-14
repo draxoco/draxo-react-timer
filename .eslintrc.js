@@ -27,7 +27,12 @@ module.exports = {
     "plugins": [
         "react"
     ],
-    "ignorePatterns": [".eslintrc.js", "react-app-env.d.ts", "reportWebVitals.ts"],
+    "ignorePatterns": [
+        ".eslintrc.js",
+        "react-app-env.d.ts",
+        "reportWebVitals.ts",
+        "webpack.config.js"
+    ],
     "rules": {
         "@typescript-eslint/no-unused-vars": "warn",
         "react/react-in-jsx-scope": "off"

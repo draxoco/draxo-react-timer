@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react'
-import Timer from './services/timer'
-import calculeTime, {
-  type timerType,
-  type calculeTimeReturnType
-} from './services/calculeTime'
+import { Timer } from './services/timer'
+import { calculeTime } from './services/calculeTime'
+import {
+  type calculeTimeReturnType,
+  type timerType
+} from './types'
 
-const ReactTimer = ({ hours, mins, segs }: timerType): {
+export const useReactTimer = ({ hours, mins, segs }: timerType): {
   handleStartClick: () => void
   handleStopClick: () => void
   handleResetClick: () => void
@@ -59,5 +60,3 @@ const ReactTimer = ({ hours, mins, segs }: timerType): {
     time
   }
 }
-
-export default ReactTimer

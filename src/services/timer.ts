@@ -1,4 +1,4 @@
-class Timer {
+export class Timer {
   private timerObj: NodeJS.Timeout | null
   readonly fn: () => void
   readonly t: number
@@ -16,5 +16,3 @@ class Timer {
     }
   }
 }
-
-export default Timer

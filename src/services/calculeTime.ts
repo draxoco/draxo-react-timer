@@ -1,15 +1,8 @@
-export interface calculeTimeReturnType { time: string, finish: boolean }
-
-export interface timerType {
-  hours: number
-  mins: number
-  segs: number
-}
-
-interface clockType extends timerType {
-  finish: boolean
-  isDecrement: boolean
-}
+import {
+  type timerType,
+  type clockType,
+  type calculeTimeReturnType
+} from '../types'
 
 const clock: clockType = {
   hours: 0,
@@ -153,7 +146,7 @@ const getDecrementType = (clock: clockType, timeValues?: timerType): string => {
   return type
 }
 
-const calculeTime = (
+export const calculeTime = (
   timeValues?: timerType,
   options: { isDecrement?: boolean, reset: boolean } = {
     isDecrement: false,
@@ -181,5 +174,3 @@ const calculeTime = (
     finish: clock.finish
   }
 }
-
-export default calculeTime

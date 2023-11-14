@@ -1,8 +1,8 @@
 {
   "name": "draxo-react-timer",
-  "version": "1.0.0",
+  "version": "1.0.23",
   "description": "Draxo React Timer",
-  "private": true,
+  "private": false,
   "main": "src/ReactTimer.tsx",
   "scripts": {
     "start": "react-scripts start",
@@ -29,19 +29,17 @@
     ]
   },
   "dependencies": {
-    "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
+    "@testing-library/jest-dom": "6.1.4",
+    "@testing-library/react": "14.0.0",
+    "@testing-library/user-event": "14.5.1",
     "@types/jest": "^29.5.7",
-    "@types/node": "^20.8.10",
-    "@types/react": "^18.2.33",
-    "@types/react-dom": "^18.2.14",
+    "@types/node": "^20.9.0",
+    "@types/react": "18.2.37",
+    "@types/react-dom": "18.2.15",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
-    "styled-components": "^6.1.0",
-    "typescript": "*",
-    "web-vitals": "^2.1.4"
+    "styled-components": "^6.1.0"
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
@@ -53,6 +51,10 @@
     "eslint-plugin-n": "^15.0.0 || ^16.0.0 ",
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-react": "^7.33.2",
-    "prettier": "^3.0.3"
+    "prettier": "^3.0.3",
+    "source-map-loader": "^4.0.1",
+    "ts-loader": "^9.5.0",
+    "typescript": "^5.2.2",
+    "webpack-cli": "^5.1.4"
   }
 }
