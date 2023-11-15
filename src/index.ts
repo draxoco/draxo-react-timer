@@ -1,1 +1,1 @@
-export * from './hooks';
+export { useReactTimer } from './hooks';
