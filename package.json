@@ -1,6 +1,6 @@
 {
   "name": "draxo-react-timer-test",
-  "version": "1.0.23",
+  "version": "1.0.24",
   "description": "Draxo React Timer",
   "private": true,
   "type": "module",
@@ -21,8 +21,8 @@
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "peerDependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
   },
   "scripts": {
     "dev": "vite",
