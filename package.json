@@ -2,59 +2,50 @@
   "name": "draxo-react-timer",
   "version": "1.0.23",
   "description": "Draxo React Timer",
-  "private": false,
-  "main": "src/ReactTimer.tsx",
+  "private": true,
+  "type": "module",
+  "repository": {
+    "url": "https://github.com/draxoco/draxo-react-timer",
+    "type": "github"
+  },
+  "files": [
+    "dist",
+    "!dist/App.js",
+    "!dist/main.js"
+  ],
+  "release": {
+    "branches": [
+      "main"
+    ]
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.js",
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "dev": "vite",
+    "build": "rimraf dist/ && tsc",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview",
+    "clean": "rimraf dist/"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "dependencies": {
-    "@testing-library/jest-dom": "6.1.4",
-    "@testing-library/react": "14.0.0",
-    "@testing-library/user-event": "14.5.1",
-    "@types/jest": "^29.5.7",
+  "dependencies": {},
+  "devDependencies": {
     "@types/node": "^20.9.0",
-    "@types/react": "18.2.37",
-    "@types/react-dom": "18.2.15",
+    "@types/react": "^18.2.15",
+    "@types/react-dom": "^18.2.7",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "@vitejs/plugin-react": "^4.0.3",
+    "eslint": "^8.45.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-scripts": "5.0.1",
-    "styled-components": "^6.1.0"
-  },
-  "devDependencies": {
-    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
-    "@types/styled-components": "^5.1.29",
-    "@typescript-eslint/eslint-plugin": "^6.4.0",
-    "eslint": "^8.0.1",
-    "eslint-config-standard-with-typescript": "^39.1.1",
-    "eslint-plugin-import": "^2.25.2",
-    "eslint-plugin-n": "^15.0.0 || ^16.0.0 ",
-    "eslint-plugin-promise": "^6.0.0",
-    "eslint-plugin-react": "^7.33.2",
-    "prettier": "^3.0.3",
-    "source-map-loader": "^4.0.1",
-    "ts-loader": "^9.5.0",
-    "typescript": "^5.2.2",
-    "webpack-cli": "^5.1.4"
+    "rimraf": "^5.0.5",
+    "typescript": "^5.0.2",
+    "vite": "^4.4.5"
   }
 }

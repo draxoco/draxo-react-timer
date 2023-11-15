@@ -1,8 +1,10 @@
-import React from 'react'
-import { useReactTimer } from './ReactTimer'
+import { useReactTimer } from '.';
+import './App.css';
 
-const App = (): JSX.Element => {
-  const { handleStopClick, handleStartClick, handleResetClick, time } = useReactTimer({ hours: 0, mins: 1, segs: 0 })
+function App() {
+  const { handleStopClick, handleStartClick, handleResetClick, time } =
+    useReactTimer({ hours: 0, mins: 1, segs: 0 });
+
   return (
     <div>
       <button onClick={handleStopClick}>Stop</button>
@@ -10,7 +12,7 @@ const App = (): JSX.Element => {
       <button onClick={handleResetClick}>Reset</button>
       {time}
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
