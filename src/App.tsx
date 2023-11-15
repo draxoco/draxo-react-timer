@@ -1,5 +1,4 @@
 import { useReactTimer } from '.';
-import './App.css';
 
 function App() {
   const { handleStopClick, handleStartClick, handleResetClick, time } =
