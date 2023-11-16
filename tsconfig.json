@@ -1,29 +1,35 @@
 {
   "compilerOptions": {
-    "target": "es6",
-    "lib": [
-      "es6",
-      "dom",
-      "dom.iterable",
-      "ScriptHost",
-      "ES2016.Array.Include",
-      "esnext"
-    ],
+    // Para archivos de declaraciones
+    "outDir": "dist",
+    "target": "ES2020",
+    "declaration": true,
     "allowJs": true,
+    "emitDeclarationOnly": false,
+    "declarationMap": false,
+    "useDefineForClassFields": true,
+    "lib": [
+      "ES2020",
+      "DOM",
+      "DOM.Iterable"
+    ],
+    "module": "ESNext",
     "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
-    "module": "esnext",
-    "moduleResolution": "node",
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": false,
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": false,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    /* Linting */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true
   },
   "include": [
     "src"
-  ]
+  ],
+  // "references": [{ "path": "./tsconfig.node.json" }]
 }
