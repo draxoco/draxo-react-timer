@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react';
-import { calculeTime } from '../services/calculeTime';
-import { Timer } from '../services/timer';
+
 import { CalculeTimeReturnType, TimerType } from '../types';
+import { Timer, calculeTime } from '../services';
 
 export const useReactTimer = ({
   hours,
   mins,
   segs,
+  isDecrement = false,
 }: TimerType): {
   handleStartClick: () => void;
   handleStopClick: () => void;
@@ -17,7 +18,7 @@ export const useReactTimer = ({
   const m = `0${mins}`.slice(-2);
   const s = `0${segs}`.slice(-2);
 
-  const timeDefaultValue = `${h}:${m}:${s}`;
+  const timeDefaultValue = isDecrement ? `${h}:${m}:${s}` : '00:00:00';
   const [time, setTime] = useState(timeDefaultValue);
   const [timerActive, setTimerActive] = useState(true);
 
@@ -26,11 +27,12 @@ export const useReactTimer = ({
       const timer = new Timer(() => {
         const cT: CalculeTimeReturnType = calculeTime(
           { hours, mins, segs },
-          { isDecrement: true, reset: false }
+          { isDecrement, reset: false }
         );
         setTime(cT.time);
         if (cT.finish) {
           timer.stop();
+          setTimerActive(false);
         }
       }, 1000);
 
