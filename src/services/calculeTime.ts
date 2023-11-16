@@ -4,6 +4,7 @@ import {
   type ClockType,
   type TimerType,
 } from '../types';
+import { displayTime } from './TimeDisplay';
 
 const clock: ClockType = {
   hours: 0,
@@ -21,7 +22,6 @@ export const calculeTime = (
   }
 ): CalculeTimeReturnType => {
   const { isDecrement, reset } = options;
-  const { hours, mins, segs } = clock;
 
   if (timeValues !== undefined && (isDecrement ?? false)) {
     if (clock.hours === 0 && !clock.isDecrement) clock.hours = timeValues.hours;
@@ -32,12 +32,13 @@ export const calculeTime = (
     increment(clock, reset, timeValues);
   }
 
-  const h = `0${hours}`.slice(-2);
-  const m = `0${mins}`.slice(-2);
-  const s = `0${segs}`.slice(-2);
+  displayTime.duration = {
+    hours: `${clock.hours}`,
+    mins: `${clock.mins}`,
+    segs: `${clock.segs}`
+  }
 
   return {
-    time: `${h}:${m}:${s}`,
     finish: clock.finish,
   };
 };
